@@ -28,7 +28,7 @@ module RQRCode
               y = c*unit + offset
               x = r*unit + offset
 
-              next unless qrcode.is_dark(c, r)
+              next unless qrcode.dark?(c, r)
               tmp << %{<rect width="#{unit}" height="#{unit}" x="#{x}" y="#{y}" style="fill:##{color}"/>}
             end 
             result << tmp.join

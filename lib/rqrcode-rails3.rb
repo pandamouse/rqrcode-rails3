@@ -15,7 +15,7 @@ module RQRCode
     size   = options[:size]  || RQRCode.minimum_qr_size_from_string(string)
     level  = options[:level] || :h
 
-    qrcode = RQRCode::QRCode.new(string, :size => size, :level => level)
+    qrcode = RQRCodeCore::QRCode.new(string, :size => size, :level => level)
     svg    = RQRCode::Renderers::SVG::render(qrcode, options)
 
     if format && format == :svg
